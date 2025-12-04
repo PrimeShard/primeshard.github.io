@@ -3,41 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prime Shard</title>
+    <title>Prime Shard - Forging New Worlds</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
-        body { 
-            background-color: #0d0d0d; 
-            color: #f2f2f2; 
-            font-family: 'Courier New', monospace; 
-            display: flex; 
+        /* 1. Reset and Basic Setup */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            background-color: #000000; /* Pitch Black */
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* No scrolling */
+        }
+
+        /* 2. The Main Container */
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 2rem; /* Space between logo and text */
+            padding: 20px;
+            animation: fadeIn 2s ease-in;
+        }
+
+        /* 3. The Logo (SVG Wrapper) */
+        .logo-symbol {
+            width: 150px; /* Adjust size here */
+            height: auto;
+            /* This filter prevents simple drag-copying */
+            pointer-events: none; 
+            user-select: none;
+        }
+
+        /* 4. The Text Area */
+        .text-content {
+            display: flex;
             flex-direction: column;
-            justify-content: center; 
-            align-items: center; 
-            height: 100vh; 
-            margin: 0; 
+            justify-content: center;
         }
-        .container { text-align: center; }
-        h1 { 
-            font-size: 3rem; 
-            margin-bottom: 0.5rem; 
-            letter-spacing: 5px; 
-            text-transform: uppercase; 
-            border-bottom: 2px solid #00ffff;
-            display: inline-block;
-            padding-bottom: 10px;
+
+        .studio-name {
+            font-size: 3.5rem; /* Big Title */
+            font-weight: 700; /* Bold */
+            letter-spacing: 0.1em; /* Wide spacing like your image */
+            line-height: 1;
+            margin-bottom: 10px;
+            text-transform: uppercase;
         }
-        p { color: #888; margin-top: 15px; font-size: 1.2rem;}
-        a { color: #00ffff; text-decoration: none; border: 1px solid #00ffff; padding: 10px 20px; border-radius: 5px; transition: all 0.3s ease;}
-        a:hover { background-color: #00ffff; color: #000; }
-        .status { color: #0f0; font-size: 0.9rem; margin-bottom: 30px; letter-spacing: 2px;}
+
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 400; /* Regular/Thin */
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #cccccc; /* Slightly softer white for subtext */
+        }
+
+        /* Responsive Design for Mobile */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Stack vertically on phones */
+                text-align: center;
+            }
+            .studio-name { font-size: 2.5rem; }
+            .tagline { font-size: 1rem; }
+            .logo-symbol { width: 120px; margin-bottom: 20px; }
+        }
+
+        /* Simple Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <h1>Prime Shard</h1>
-        <div class="status">[ SYSTEM ONLINE ]</div>
-        <p>Forging New Worlds.</p>
-        <br><br>
+        
+        <svg class="logo-symbol" viewBox="0 0 100 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 0 L100 50 L50 150 L0 50 Z" fill="white"/>
+        </svg>
+        <div class="text-content">
+            <h1 class="studio-name">PRIME<br>SHARD</h1>
+            <p class="tagline">Forging New Worlds</p>
+        </div>
     </div>
+
 </body>
 </html>
